@@ -19,7 +19,7 @@ module.exports = {
         Stock.create(req.params.all(), function stockCreated(err, stock) {
             if (err) return next(err);
 
-            res.json(stock);
+            res.redirect('/customer/show'+ stock.owner);
         });
     }
     
